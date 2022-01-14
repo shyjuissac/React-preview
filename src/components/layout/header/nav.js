@@ -3,12 +3,12 @@ import { isEmpty } from "lodash";
 import Link from "next/link";
 
 const Nav = ({header, headerMenus}) => {
-
+const [ isMenuVisible, setMenuVisibility ] = useState(false);
 	if ( isEmpty(headerMenus) ) {
 		return null;
 	}
 
-	const [ isMenuVisible, setMenuVisibility ] = useState(false);
+	
 
 
 	return (
