@@ -11,7 +11,7 @@ export default async function login(req, res) {
      * So when testing locally both in dev and prod, set the value of 'secure' to be false.
      */
     res.setHeader('Set-Cookie', cookie.serialize('auth', String(data?.login?.authToken ?? ''), {
-        httpsOnly: true, 
+        httpsOnly: false, 
         secure: true !== process.env.NODE_ENV,
         path: '/',
         maxAge: 60 * 60 * 24 * 7 // 1 week
