@@ -12,7 +12,7 @@ export default async function login(req, res) {
      */
     res.setHeader('Set-Cookie', cookie.serialize('auth', String(data?.login?.authToken ?? ''), {
         httpsOnly: false, 
-        secure: true !== process.env.NODE_ENV,
+        secure: true == process.env.NODE_ENV,
         path: '/',
         maxAge: 60 * 60 * 24 * 7 // 1 week
     }));
